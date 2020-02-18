@@ -1,0 +1,31 @@
+Summary Statistics for DNA sequences - 
+
+Sum: 19
+Number of DNA sequences: 2
+Mean: 9.5
+Variance: 12
+STDEV: 3.4641
+
+Relative probability statistics for each nucleotide: 
+A: 0.210526
+G: 0.263158
+T: 0.315789
+C: 0.210526
+
+Probability for each Biogram: 
+AA: 0.0588235
+AC: 0
+AG: 0.0588235
+AT: 0.0588235
+CA: 0.0588235
+CC: 0.0588235
+CG: 0.117647
+CT: 0
+GA: 0
+GC: 0.0588235
+GG: 0
+GT: 0.176471
+TA: 0
+TC: 0.117647
+TG: 0.117647
+TC: 0.117647
