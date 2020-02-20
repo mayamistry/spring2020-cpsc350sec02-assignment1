@@ -5,3 +5,5 @@ Assignment 1 submission for CPSC 350-02 class
 Maya Mistry
 #2287039
 Assignment 1 Submission - DNA sequences
+
+Used ZyBooks from CPSC 298 to refresh on C++ IO classes
