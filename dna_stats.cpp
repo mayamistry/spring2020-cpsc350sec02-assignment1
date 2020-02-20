@@ -1,3 +1,9 @@
+/**
+ * Assignment 1 - working with DNA sequences
+ * @param  argc - - number of arguments taken in on command line
+ * @param  argv - array of actual arguments on command line
+ * @return - prints all of the summary stats and new DNA strings onto "mayamistry.out"
+ */
 #include <iostream>
 #include <fstream>
 #include <math.h>
@@ -152,7 +158,7 @@ int main (int argc, char**argv) {
       return 1;
     }
 
-    //these variables will be used to calculate probability (biogram)
+    //these variables will be used to calculate probability (bigram)
     int countAA = 0;
     int countAC = 0;
     int countAT = 0;
@@ -170,9 +176,9 @@ int main (int argc, char**argv) {
     int countTT = 0;
     int countTG = 0;
 
-    char biogram1;
-    char biogram2;
-    int biogramSum = 0;
+    char bigram1;
+    char bigram2;
+    int bigramSum = 0;
     //start reading the file
     while (!inFS.eof()) {
       inFS >> dnaSequence;
@@ -181,65 +187,65 @@ int main (int argc, char**argv) {
           if (i == dnaSequence.size() - 1) {
             break;
           }
-          biogram1 = dnaSequence[i];
-          biogram2 = dnaSequence[i + 1];
-          toupper(biogram1);
-          toupper(biogram2);
-          if (biogram1 == 'A' && biogram2 == 'A') {
+          bigram1 = dnaSequence[i];
+          bigram2 = dnaSequence[i + 1];
+          toupper(bigram1);
+          toupper(bigram2);
+          if (bigram1 == 'A' && bigram2 == 'A') {
             countAA++;
-          } else if (biogram1 == 'A' && biogram2 == 'C') {
+          } else if (bigram1 == 'A' && bigram2 == 'C') {
             countAC++;
-          } else if (biogram1 == 'A' && biogram2 == 'G') {
+          } else if (bigram1 == 'A' && bigram2 == 'G') {
             countAG++;
-          } else if (biogram1 == 'A' && biogram2 == 'T') {
+          } else if (bigram1 == 'A' && bigram2 == 'T') {
             countAT++;
-          } else if (biogram1 == 'C' && biogram2 == 'A') {
+          } else if (bigram1 == 'C' && bigram2 == 'A') {
             countCA++;
-          } else if (biogram1 == 'C' && biogram2 == 'C') {
+          } else if (bigram1 == 'C' && bigram2 == 'C') {
             countCC++;
-          } else if (biogram1 == 'C' && biogram2 == 'G') {
+          } else if (bigram1 == 'C' && bigram2 == 'G') {
             countCG++;
-          } else if (biogram1 == 'C' && biogram2 == 'T') {
+          } else if (bigram1 == 'C' && bigram2 == 'T') {
             countCT++;
-          } else if (biogram1 == 'G' && biogram2 == 'A') {
+          } else if (bigram1 == 'G' && bigram2 == 'A') {
             countGA++;
-          } else if (biogram1 == 'G' && biogram2 == 'C') {
+          } else if (bigram1 == 'G' && bigram2 == 'C') {
             countGC++;
-          } else if (biogram1 == 'G' && biogram2 == 'G') {
+          } else if (bigram1 == 'G' && bigram2 == 'G') {
             countGG++;
-          } else if (biogram1 == 'G' && biogram2 == 'T') {
+          } else if (bigram1 == 'G' && bigram2 == 'T') {
             countGT++;
-          } else if (biogram1 == 'T' && biogram2 == 'A') {
+          } else if (bigram1 == 'T' && bigram2 == 'A') {
             countTA++;
-          } else if (biogram1 == 'T' && biogram2 == 'C') {
+          } else if (bigram1 == 'T' && bigram2 == 'C') {
             countTC++;
-          } else if (biogram1 == 'T' && biogram2 == 'G') {
+          } else if (bigram1 == 'T' && bigram2 == 'G') {
             countTG++;
-          } else if (biogram1 == 'T' && biogram2 == 'T') {
+          } else if (bigram1 == 'T' && bigram2 == 'T') {
             countTT++;
           }
-          biogramSum++;
+          bigramSum++;
         }
       }
     }
 
     //solve for the actual probability
-    float probAA = (float)countAA / biogramSum;
-    float probAC = (float)countAC / biogramSum;
-    float probAG = (float)countAG / biogramSum;
-    float probAT = (float)countAT / biogramSum;
-    float probCA = (float)countCA / biogramSum;
-    float probCC = (float)countCC / biogramSum;
-    float probCG = (float)countCG / biogramSum;
-    float probCT = (float)countCT / biogramSum;
-    float probGA = (float)countGA / biogramSum;
-    float probGC = (float)countGC / biogramSum;
-    float probGG = (float)countGG / biogramSum;
-    float probGT = (float)countGT / biogramSum;
-    float probTA = (float)countTA / biogramSum;
-    float probTC = (float)countTC / biogramSum;
-    float probTG = (float)countTG / biogramSum;
-    float probTT = (float)countTT / biogramSum;
+    float probAA = (float)countAA / bigramSum;
+    float probAC = (float)countAC / bigramSum;
+    float probAG = (float)countAG / bigramSum;
+    float probAT = (float)countAT / bigramSum;
+    float probCA = (float)countCA / bigramSum;
+    float probCC = (float)countCC / bigramSum;
+    float probCG = (float)countCG / bigramSum;
+    float probCT = (float)countCT / bigramSum;
+    float probGA = (float)countGA / bigramSum;
+    float probGC = (float)countGC / bigramSum;
+    float probGG = (float)countGG / bigramSum;
+    float probGT = (float)countGT / bigramSum;
+    float probTA = (float)countTA / bigramSum;
+    float probTC = (float)countTC / bigramSum;
+    float probTG = (float)countTG / bigramSum;
+    float probTT = (float)countTT / bigramSum;
 
     inFS.close();
 
@@ -262,7 +268,7 @@ int main (int argc, char**argv) {
     outFS << "T: " << probT << endl;
     outFS << "C: " << probC << endl;
     outFS << endl;
-    outFS << "Probability for each Biogram: " << endl;
+    outFS << "Probability for each bigram: " << endl;
     outFS << "AA: " << probAA << endl;
     outFS << "AC: " << probAC << endl;
     outFS << "AG: " << probAG << endl;
@@ -279,10 +285,53 @@ int main (int argc, char**argv) {
     outFS << "TC: " << probTC << endl;
     outFS << "TG: " << probTG << endl;
     outFS << "TC: " << probTT << endl;
+    outFS << endl;
+
+
+    //Gaussian distribution
+    float a = 0.0;
+    float b = 0.0;
+    int const NUM_STRINGS = 1000;
+    string gaussianSequence = "";
+    float cValue = 0;
+    float dValue = 0;
+
+    int tempCountA = 0;
+    int tempCountC = 0;
+    int tempCountG = 0;
+    int tempCountT = 0;
+
+    for (int i = 0; i < NUM_STRINGS; ++i) {
+      //creates the two random values from [0,1)
+      a = (float)(rand())/RAND_MAX;
+      b = (float)(rand())/RAND_MAX;
+      cValue = sqrt(-2 * log(a)) * cos(2 * M_PI * b);
+      dValue = (stdev * cValue) + mean;
+      //use thr probability and dValue to get length counts for each nucleotide
+      tempCountA = dValue * probA;
+      tempCountC = dValue * probC;
+      tempCountG = dValue * probG;
+      tempCountT = dValue * probT;
+      //loop through to print the correct amount of nucleotides for each string
+      for (int i = 0; i < tempCountA; ++i) {
+        gaussianSequence += "A";
+      }
+      for (int i = 0; i < tempCountC; ++i) {
+        gaussianSequence += "C";
+      }
+      for (int i = 0; i < tempCountG; ++i) {
+        gaussianSequence += "G";
+      }
+      for (int i = 0; i < tempCountT; ++i) {
+        gaussianSequence += "T";
+      }
+      //output onto the .out file and reset the string variable
+      outFS << gaussianSequence << endl;
+      gaussianSequence = "";
+    }
 
     //close the stream for mayamistry.out
     outFS.close();
-
     cout << "Program worked successfully! Check mayamistry.out for statistics." << endl;
 
   } else {
