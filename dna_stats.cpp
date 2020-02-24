@@ -372,7 +372,7 @@ int main (int argc, char**argv) {
     } else {
       cout << "Invalid: please provide the name of the file with the DNA sequences" << endl;
       cout << "Example: ./mayamistry.out dna.txt" << endl;
-      return 0;
+      return 1;
     }
 
     //reset all of the variables back to 0.
