@@ -68,17 +68,17 @@ int main (int argc, char**argv) {
   float probTT = 0;
 
   //Gaussian distribution variables
-  float a = 0.0;
-  float b = 0.0;
+  double a = 0.0;
+  double b = 0.0;
   int const NUM_STRINGS = 1000;
   string gaussianSequence = "";
-  float cValue = 0;
-  float dValue = 0;
+  double cValue = 0;
+  double dValue = 0;
 
-  int tempCountA = 0;
-  int tempCountC = 0;
-  int tempCountG = 0;
-  int tempCountT = 0;
+  double tempCountA = 0.0;
+  double tempCountC = 0.0;
+  double tempCountG = 0.0;
+  double tempCountT = 0.0;
 
   char bigram1 = '\0';
   char bigram2 = '\0';
@@ -339,10 +339,11 @@ int main (int argc, char**argv) {
 
       for (int i = 0; i < NUM_STRINGS; ++i) {
           //creates the two random values from [0,1)
-        a = (float)(rand())/RAND_MAX;
-        b = (float)(rand())/RAND_MAX;
-        cValue = sqrt(-2 * log(a)) * cos(2 * M_PI * b);
-        dValue = (stdev * cValue) + mean;
+        a = (rand())/(double)(RAND_MAX);
+        b = (rand())/(double)(RAND_MAX);
+        cValue = (sqrt(-2 * log(a)) * cos(2 * M_PI * b));
+        dValue = (double)stdev * cValue + mean;
+        dValue = round(dValue);
         //use thr probability and dValue to get length counts for each nucleotide
         tempCountA = dValue * probA;
         tempCountC = dValue * probC;
