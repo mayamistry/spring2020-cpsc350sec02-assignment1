@@ -341,7 +341,7 @@ int main (int argc, char**argv) {
           //creates the two random values from [0,1)
         a = (rand())/(double)(RAND_MAX);
         b = (rand())/(double)(RAND_MAX);
-        cValue = (sqrt(-2 * log(a)) * cos(2 * M_PI * b));
+        cValue = abs((sqrt(-2 * log(a)) * cos(2 * M_PI * b)));
         dValue = (double)stdev * cValue + mean;
         dValue = round(dValue);
         //use thr probability and dValue to get length counts for each nucleotide
@@ -442,7 +442,7 @@ int main (int argc, char**argv) {
     bigramSum = 0;
 
     //Ask user if they want to process another list. If they do, they can enter the name of the next .txt file they want to process.
-    cout << "Would you like to process another list? If not, type 'done.' If so, type in 'yes' and a new .txt file name.'" << endl;
+    cout << "Would you like to process another list? If not, type 'done.' If so, type in a new .txt file name.'" << endl;
     cout << "Example: dna.txt" << endl;
     cin >> userInput;
     fileName = userInput;
