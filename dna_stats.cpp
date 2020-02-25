@@ -110,7 +110,6 @@ int main (int argc, char**argv) {
           for (int i = 0; i < dnaSequence.size(); ++i) {
             char currentChar = dnaSequence[i];
             currentChar = toupper(currentChar);
-            cout << currentChar << endl;
             //make sure character is valid
             switch (currentChar) {
               case 'A':
@@ -125,9 +124,6 @@ int main (int argc, char**argv) {
           }
         }
       }
-
-      cout << sum << endl;
-      cout << lineCount << endl;
 
       //Calculate the mean
       mean = (float)sum / lineCount;
